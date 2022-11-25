@@ -1,0 +1,2 @@
+# goodscontract
+Goods .proto contracts 
