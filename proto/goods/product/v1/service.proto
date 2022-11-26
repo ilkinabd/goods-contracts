@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package goods.products.v1;
+
+option go_package = "github.com/ilkinabd/goodscontract/gen/go/goods/product/v1;pb_goods_product_service";
+
+import "common/v1/search.proto";
+import "common/v1/sort.proto";
+import "goods/product/v1/product.proto";
+
+service ProductService {
+  rpc AllProducts(AllProductsRequest) returns (AllProductsResponse) {}
+  rpc ProductByID(ProductByIDRequest) returns (ProductByIDResponse) {}
+  rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {}
+  rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse) {}
+  rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {}
+}
+
+message CreateProductRequest {
+  // Name
+  string name = 1;
+  // Description
+  string description = 2;
+  // Image ID
+  optional string image_id = 3;
+  // Price
+  uint64 price = 4;
+  // Prince Currency
+  uint32 currency_id = 5;
+  // Rating
+  uint32 rating = 6;
+  // Category ID
+  uint32 category_id = 7;
+  // Specification
+  string specification = 8;
+}
+
+message CreateProductResponse {
+  Product product = 1;
+}
+
+message AllProductsRequest {
+  common.v1.Pagination pagination = 1;
+  common.v1.Search search = 2;
+  common.v1.Sort sort = 3;
+}
+
+message AllProductsResponse {
+  repeated Product products = 1;
+}
+
+message ProductByIDRequest {
+  // ID
+  string id = 1;
+}
+
+message ProductByIDResponse {
+  Product product = 1;
+}
+
+message UpdateProductRequest {
+  // ID
+  string id = 1;
+  // Name
+  optional string name = 2;
+  // Description
+  optional string description = 3;
+  // Image ID
+  optional string image_id = 4;
+  // Price
+  optional uint64 price = 5;
+  // Prince Currency
+  optional uint32 currency_id = 6;
+  // Rating
+  optional uint32 rating = 7;
+  // Category ID
+  optional uint32 category_id = 8;
+  // Specification
+  optional string specification = 9;
+}
+
+message UpdateProductResponse {}
+
+message DeleteProductRequest {
+  // ID
+  string id = 1;
+}
+
+message DeleteProductResponse {}

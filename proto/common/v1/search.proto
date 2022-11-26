@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package common.v1;
+
+option go_package = "github.com/ilkinabd/goodscontract/gen/go/common/v1;pb_common";
+
+message Pagination {
+  uint64 limit = 1;
+  uint64 offset = 2;
+}
+
+message Search {
+  repeated Field fields = 1;
+}
+
+message Field {
+  string name = 1;
+  string operator = 2;
+  string value = 3;
+}
