@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package common.v1;
+package common.search.v1;
 
-option go_package = "github.com/ilkinabd/goodscontract/gen/go/common/v1;pb_common";
+option go_package = "github.com/ilkinabd/goodscontract/gen/go/common/search/v1;pb_common_search";
 
 message Pagination {
   uint64 limit = 1;

@@ -7,7 +7,7 @@ proto: clean format gen lint
 gen:
 	@$(GOPATH)/bin/buf generate
 	@for dir in $(CURDIR)/gen/go/*/; do \
-  	  	path=`basename "$$dir"` ;\
+  	  	path=`basename "$$dir"` && echo $$path;\
   	  	cd $$dir && \
 	 	go mod init github.com/ilkinabd/goodscontract/gen/go/$$path && go mod tidy; \
   	done

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package common.search.v1;
+
+option go_package = "github.com/ilkinabd/goodscontract/gen/go/common/search/v1;pb_common_search";
+
+// Sorting array
+message Sort {
+  string field = 1;
+  string order = 2;
+}
