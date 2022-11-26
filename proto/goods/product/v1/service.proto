@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package goods.products.v1;
 
-option go_package = "github.com/ilkinabd/goodscontract/gen/go/goods/product/v1;pb_goods_product_service";
+option go_package = "github.com/ilkinabd/goods-contracts/gen/go/goods/product/v1;pb_goods_product_service";
 
-import "common/search/v1/search.proto";
-import "common/search/v1/sort.proto";
+import "goods/common/search/v1/search.proto";
+import "goods/common/search/v1/sort.proto";
 import "goods/product/v1/product.proto";
 
 service ProductService {

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package common.search.v1;
 
-option go_package = "github.com/ilkinabd/goodscontract/gen/go/common/search/v1;pb_common_search";
+option go_package = "github.com/ilkinabd/goods-contracts/gen/go/common/search/v1;pb_common_search";
 
 message Pagination {
   uint64 limit = 1;
