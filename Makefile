@@ -7,9 +7,9 @@ proto: clean format gen lint
 gen:
 	@$(GOPATH)/bin/buf generate
 	@for dir in $(CURDIR)/gen/go/*/; do \
-  	  	path=`basename "$$dir"` && echo $$path;\
+  	  	path=`basename "$$dir"` && \
   	  	cd $$dir && \
-	 	go mod init github.com/ilkinabd/goodscontract/gen/go/$$path && go mod tidy; \
+	 	go mod init github.com/ilkinabd/goods-contracts/gen/go/$$path && go mod tidy; \
   	done
 
 .PHONY: lint

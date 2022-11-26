@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package goods.products.v1;
+package products.v1;
 
-option go_package = "github.com/ilkinabd/goods-contracts/gen/go/goods/product/v1;pb_goods_product_service";
+option go_package = "github.com/ilkinabd/goods-contracts/gen/go/products/v1;pb_products";
 
-import "goods/common/search/v1/search.proto";
-import "goods/common/search/v1/sort.proto";
-import "goods/product/v1/product.proto";
+import "common/v1/sort.proto";
+import "common/v1/search.proto";
+import "products/v1/product.proto";
 
 service ProductService {
   rpc AllProducts(AllProductsRequest) returns (AllProductsResponse) {}
@@ -40,9 +40,9 @@ message CreateProductResponse {
 }
 
 message AllProductsRequest {
-  common.search.v1.Pagination pagination = 1;
-  common.search.v1.Search search = 2;
-  common.search.v1.Sort sort = 3;
+  common.v1.Pagination pagination = 1;
+  common.v1.Search search = 2;
+  common.v1.Sort sort = 3;
 }
 
 message AllProductsResponse {
